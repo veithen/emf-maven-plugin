@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/emf-maven-plugin/src" modelPluginID="emf-maven-plugin"
+    modelName="Webapp" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>target/model/target/model/javaee.ecore</foreignModel>
+  <genPackages prefix="Javaee" basePackage="test" resource="XML" disposableProviderFactory="true"
+      loadInitialization="true" literalsInterface="false" ecorePackage="target/model/javaee.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="target/model/javaee.ecore#//IsolationLevelType">
+      <genEnumLiterals ecoreEnumLiteral="target/model/javaee.ecore#//IsolationLevelType/TRANSACTIONREADUNCOMMITTED"/>
+      <genEnumLiterals ecoreEnumLiteral="target/model/javaee.ecore#//IsolationLevelType/TRANSACTIONREADCOMMITTED"/>
+      <genEnumLiterals ecoreEnumLiteral="target/model/javaee.ecore#//IsolationLevelType/TRANSACTIONREPEATABLEREAD"/>
+      <genEnumLiterals ecoreEnumLiteral="target/model/javaee.ecore#//IsolationLevelType/TRANSACTIONSERIALIZABLE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="target/model/javaee.ecore#//NullCharType">
+      <genEnumLiterals ecoreEnumLiteral="target/model/javaee.ecore#//NullCharType/_"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="target/model/javaee.ecore#//WebAppVersionType">
+      <genEnumLiterals ecoreEnumLiteral="target/model/javaee.ecore#//WebAppVersionType/_30"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="target/model/javaee.ecore#//DeweyVersionType"/>
+    <genDataTypes ecoreDataType="target/model/javaee.ecore#//EncodingType"/>
+    <genDataTypes ecoreDataType="target/model/javaee.ecore#//HttpMethodType"/>
+    <genDataTypes ecoreDataType="target/model/javaee.ecore#//IsolationLevelTypeObject"/>
+    <genDataTypes ecoreDataType="target/model/javaee.ecore#//LoadOnStartupType"/>
+    <genDataTypes ecoreDataType="target/model/javaee.ecore#//LocaleType"/>
+    <genDataTypes ecoreDataType="target/model/javaee.ecore#//NonEmptyStringTypeBase"/>
+    <genDataTypes ecoreDataType="target/model/javaee.ecore#//NullCharTypeObject"/>
+    <genDataTypes ecoreDataType="target/model/javaee.ecore#//ProtocolBindingListType"/>
+    <genDataTypes ecoreDataType="target/model/javaee.ecore#//ProtocolBindingType"/>
+    <genDataTypes ecoreDataType="target/model/javaee.ecore#//ProtocolURIAliasType"/>
+    <genDataTypes ecoreDataType="target/model/javaee.ecore#//QnamePattern"/>
+    <genDataTypes ecoreDataType="target/model/javaee.ecore#//WebAppVersionTypeObject"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//AbsoluteOrderingType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//AbsoluteOrderingType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//AbsoluteOrderingType/name"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//AbsoluteOrderingType/others"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//AddressingResponsesType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//AddressingType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//AddressingType/enabled"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//AddressingType/required"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//AddressingType/responses"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//AuthConstraintType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//AuthConstraintType/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//AuthConstraintType/roleName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//AuthConstraintType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//AuthMethodType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//CookieCommentType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//CookieConfigType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//CookieConfigType/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//CookieConfigType/domain"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//CookieConfigType/path"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//CookieConfigType/comment"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//CookieConfigType/httpOnly"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//CookieConfigType/secure"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//CookieConfigType/maxAge"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//CookieConfigType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//CookieDomainType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//CookieNameType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//CookiePathType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//DataSourceType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//DataSourceType/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//DataSourceType/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//DataSourceType/className"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//DataSourceType/serverName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//DataSourceType/portNumber"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//DataSourceType/databaseName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//DataSourceType/url"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//DataSourceType/user"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//DataSourceType/password"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//DataSourceType/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//DataSourceType/loginTimeout"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//DataSourceType/transactional"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//DataSourceType/isolationLevel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//DataSourceType/initialPoolSize"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//DataSourceType/maxPoolSize"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//DataSourceType/minPoolSize"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//DataSourceType/maxIdleTime"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//DataSourceType/maxStatements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//DataSourceType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//DescriptionType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//DescriptionType/lang"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//DispatcherType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//DisplayNameType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//DisplayNameType/lang"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//DocumentRoot/webApp"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//EjbLinkType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//EjbLocalRefType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//EjbLocalRefType/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//EjbLocalRefType/ejbRefName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//EjbLocalRefType/ejbRefType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//EjbLocalRefType/localHome"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//EjbLocalRefType/local"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//EjbLocalRefType/ejbLink"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//EjbLocalRefType/mappedName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//EjbLocalRefType/injectionTarget"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//EjbLocalRefType/lookupName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//EjbLocalRefType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//EjbRefNameType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//EjbRefType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//EjbRefType/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//EjbRefType/ejbRefName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//EjbRefType/ejbRefType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//EjbRefType/home"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//EjbRefType/remote"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//EjbRefType/ejbLink"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//EjbRefType/mappedName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//EjbRefType/injectionTarget"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//EjbRefType/lookupName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//EjbRefType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//EjbRefTypeType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//EmptyType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//EmptyType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//EnvEntryType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//EnvEntryType/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//EnvEntryType/envEntryName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//EnvEntryType/envEntryType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//EnvEntryType/envEntryValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//EnvEntryType/mappedName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//EnvEntryType/injectionTarget"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//EnvEntryType/lookupName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//EnvEntryType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//EnvEntryTypeValuesType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//ErrorCodeType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//ErrorPageType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ErrorPageType/errorCode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ErrorPageType/exceptionType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ErrorPageType/location"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//ErrorPageType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//FilterMappingType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//FilterMappingType/filterName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//FilterMappingType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//FilterMappingType/urlPattern"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//FilterMappingType/servletName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//FilterMappingType/dispatcher"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//FilterMappingType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//FilterNameType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//FilterType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//FilterType/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//FilterType/displayName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//FilterType/icon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//FilterType/filterName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//FilterType/filterClass"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//FilterType/asyncSupported"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//FilterType/initParam"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//FilterType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//FormLoginConfigType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//FormLoginConfigType/formLoginPage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//FormLoginConfigType/formErrorPage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//FormLoginConfigType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//FullyQualifiedClassType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//GenericBooleanType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//HandlerChainsType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//HandlerChainsType/handlerChain"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//HandlerChainsType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//HandlerChainType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//HandlerChainType/serviceNamePattern"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//HandlerChainType/portNamePattern"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//HandlerChainType/protocolBindings"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//HandlerChainType/handler"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//HandlerChainType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//HandlerType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//HandlerType/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//HandlerType/displayName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//HandlerType/icon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//HandlerType/handlerName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//HandlerType/handlerClass"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//HandlerType/initParam"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//HandlerType/soapHeader"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//HandlerType/soapRole"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//HandlerType/portName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//HandlerType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//HomeType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//IconType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//IconType/smallIcon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//IconType/largeIcon"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//IconType/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//IconType/lang"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//InjectionTargetType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//InjectionTargetType/injectionTargetClass"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//InjectionTargetType/injectionTargetName"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//JavaIdentifierType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//JavaTypeType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//JdbcUrlType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//JndiNameType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//JspConfigType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//JspConfigType/taglib"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//JspConfigType/jspPropertyGroup"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//JspConfigType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//JspFileType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//JspPropertyGroupType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//JspPropertyGroupType/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//JspPropertyGroupType/displayName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//JspPropertyGroupType/icon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//JspPropertyGroupType/urlPattern"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//JspPropertyGroupType/elIgnored"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//JspPropertyGroupType/pageEncoding"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//JspPropertyGroupType/scriptingInvalid"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//JspPropertyGroupType/isXml"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//JspPropertyGroupType/includePrelude"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//JspPropertyGroupType/includeCoda"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//JspPropertyGroupType/deferredSyntaxAllowedAsLiteral"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//JspPropertyGroupType/trimDirectiveWhitespaces"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//JspPropertyGroupType/defaultContentType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//JspPropertyGroupType/buffer"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//JspPropertyGroupType/errorOnUndeclaredNamespace"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//JspPropertyGroupType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//LifecycleCallbackType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//LifecycleCallbackType/lifecycleCallbackClass"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//LifecycleCallbackType/lifecycleCallbackMethod"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//ListenerType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ListenerType/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ListenerType/displayName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ListenerType/icon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ListenerType/listenerClass"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//ListenerType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//LocaleEncodingMappingListType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//LocaleEncodingMappingListType/localeEncodingMapping"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//LocaleEncodingMappingListType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//LocaleEncodingMappingType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//LocaleEncodingMappingType/locale"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//LocaleEncodingMappingType/encoding"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//LocaleEncodingMappingType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//LocalHomeType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//LocalType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//LoginConfigType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//LoginConfigType/authMethod"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//LoginConfigType/realmName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//LoginConfigType/formLoginConfig"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//LoginConfigType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//MessageDestinationLinkType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//MessageDestinationRefType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//MessageDestinationRefType/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//MessageDestinationRefType/messageDestinationRefName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//MessageDestinationRefType/messageDestinationType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//MessageDestinationRefType/messageDestinationUsage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//MessageDestinationRefType/messageDestinationLink"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//MessageDestinationRefType/mappedName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//MessageDestinationRefType/injectionTarget"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//MessageDestinationRefType/lookupName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//MessageDestinationRefType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//MessageDestinationType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//MessageDestinationType/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//MessageDestinationType/displayName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//MessageDestinationType/icon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//MessageDestinationType/messageDestinationName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//MessageDestinationType/mappedName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//MessageDestinationType/lookupName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//MessageDestinationType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//MessageDestinationTypeType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//MessageDestinationUsageType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//MimeMappingType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//MimeMappingType/extension"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//MimeMappingType/mimeType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//MimeMappingType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//MimeTypeType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//MultipartConfigType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//MultipartConfigType/location"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//MultipartConfigType/maxFileSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//MultipartConfigType/maxRequestSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//MultipartConfigType/fileSizeThreshold"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//NonEmptyStringType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//OrderingOrderingType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//OrderingOrderingType/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//OrderingOrderingType/others"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//OrderingOthersType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//OrderingOthersType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//OrderingType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//OrderingType/after"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//OrderingType/before"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//ParamValueType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ParamValueType/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ParamValueType/paramName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ParamValueType/paramValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//ParamValueType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//PathType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//PersistenceContextRefType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//PersistenceContextRefType/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//PersistenceContextRefType/persistenceContextRefName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//PersistenceContextRefType/persistenceUnitName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//PersistenceContextRefType/persistenceContextType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//PersistenceContextRefType/persistenceProperty"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//PersistenceContextRefType/mappedName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//PersistenceContextRefType/injectionTarget"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//PersistenceContextRefType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//PersistenceContextTypeType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//PersistenceUnitRefType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//PersistenceUnitRefType/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//PersistenceUnitRefType/persistenceUnitRefName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//PersistenceUnitRefType/persistenceUnitName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//PersistenceUnitRefType/mappedName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//PersistenceUnitRefType/injectionTarget"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//PersistenceUnitRefType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//PortComponentRefType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//PortComponentRefType/serviceEndpointInterface"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//PortComponentRefType/enableMtom"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//PortComponentRefType/mtomThreshold"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//PortComponentRefType/addressing"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//PortComponentRefType/respectBinding"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//PortComponentRefType/portComponentLink"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//PortComponentRefType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//PropertyType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//PropertyType/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//PropertyType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//PropertyType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//RemoteType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//ResAuthType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//ResourceEnvRefType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ResourceEnvRefType/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ResourceEnvRefType/resourceEnvRefName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ResourceEnvRefType/resourceEnvRefType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ResourceEnvRefType/mappedName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ResourceEnvRefType/injectionTarget"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ResourceEnvRefType/lookupName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//ResourceEnvRefType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//ResourceRefType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ResourceRefType/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ResourceRefType/resRefName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ResourceRefType/resType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ResourceRefType/resAuth"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ResourceRefType/resSharingScope"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ResourceRefType/mappedName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ResourceRefType/injectionTarget"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ResourceRefType/lookupName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//ResourceRefType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//RespectBindingType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//RespectBindingType/enabled"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//ResSharingScopeType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//RoleNameType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//RunAsType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//RunAsType/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//RunAsType/roleName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//RunAsType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//SecurityConstraintType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//SecurityConstraintType/displayName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//SecurityConstraintType/webResourceCollection"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//SecurityConstraintType/authConstraint"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//SecurityConstraintType/userDataConstraint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//SecurityConstraintType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//SecurityRoleRefType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//SecurityRoleRefType/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//SecurityRoleRefType/roleName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//SecurityRoleRefType/roleLink"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//SecurityRoleRefType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//SecurityRoleType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//SecurityRoleType/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//SecurityRoleType/roleName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//SecurityRoleType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//ServiceRefType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ServiceRefType/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ServiceRefType/displayName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ServiceRefType/icon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ServiceRefType/serviceRefName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ServiceRefType/serviceInterface"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ServiceRefType/serviceRefType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ServiceRefType/wsdlFile"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ServiceRefType/jaxrpcMappingFile"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ServiceRefType/serviceQname"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ServiceRefType/portComponentRef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ServiceRefType/handler"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ServiceRefType/handlerChains"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ServiceRefType/mappedName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ServiceRefType/injectionTarget"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ServiceRefType/lookupName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//ServiceRefType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//ServletMappingType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ServletMappingType/servletName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ServletMappingType/urlPattern"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//ServletMappingType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//ServletNameType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//ServletType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ServletType/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ServletType/displayName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ServletType/icon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ServletType/servletName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ServletType/servletClass"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ServletType/jspFile"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ServletType/initParam"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//ServletType/loadOnStartup"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ServletType/enabled"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ServletType/asyncSupported"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ServletType/runAs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ServletType/securityRoleRef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//ServletType/multipartConfig"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//ServletType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//SessionConfigType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//SessionConfigType/sessionTimeout"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//SessionConfigType/cookieConfig"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//SessionConfigType/trackingMode"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//SessionConfigType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//String">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//String/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//String/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//TaglibType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//TaglibType/taglibUri"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//TaglibType/taglibLocation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//TaglibType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//TrackingModeType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//TransportGuaranteeType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//TrueFalseType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//UrlPatternType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//UrlPatternType/value"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//UserDataConstraintType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//UserDataConstraintType/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//UserDataConstraintType/transportGuarantee"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//UserDataConstraintType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//WarPathType"/>
+    <genClasses ecoreClass="target/model/javaee.ecore#//WebAppType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//WebAppType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/moduleName"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/description"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/displayName"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/icon"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/distributable"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/contextParam"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/filter"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/filterMapping"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/listener"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/servlet"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/servletMapping"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/sessionConfig"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/mimeMapping"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/welcomeFileList"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/errorPage"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/jspConfig"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/securityConstraint"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/loginConfig"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/securityRole"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/envEntry"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/ejbRef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/ejbLocalRef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/serviceRef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/resourceRef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/resourceEnvRef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/messageDestinationRef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/persistenceContextRef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/persistenceUnitRef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/postConstruct"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/preDestroy"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/dataSource"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/messageDestination"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/localeEncodingMappingList"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebAppType/absoluteOrdering"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//WebAppType/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//WebAppType/metadataComplete"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//WebAppType/version"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//WebFragmentType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//WebFragmentType/group"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/name"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/description"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/displayName"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/icon"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/distributable"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/contextParam"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/filter"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/filterMapping"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/listener"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/servlet"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/servletMapping"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/sessionConfig"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/mimeMapping"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/welcomeFileList"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/errorPage"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/jspConfig"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/securityConstraint"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/loginConfig"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/securityRole"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/envEntry"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/ejbRef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/ejbLocalRef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/serviceRef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/resourceRef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/resourceEnvRef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/messageDestinationRef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/persistenceContextRef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/persistenceUnitRef"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/postConstruct"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/preDestroy"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/dataSource"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/messageDestination"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/localeEncodingMappingList"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebFragmentType/ordering"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//WebFragmentType/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//WebFragmentType/metadataComplete"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//WebFragmentType/version"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//WebResourceCollectionType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebResourceCollectionType/webResourceName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebResourceCollectionType/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference target/model/javaee.ecore#//WebResourceCollectionType/urlPattern"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//WebResourceCollectionType/httpMethod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//WebResourceCollectionType/httpMethodOmission"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//WebResourceCollectionType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//WelcomeFileListType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//WelcomeFileListType/welcomeFile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//WelcomeFileListType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//XsdAnyURIType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//XsdAnyURIType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//XsdAnyURIType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//XsdBooleanType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//XsdBooleanType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//XsdBooleanType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//XsdIntegerType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//XsdIntegerType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//XsdIntegerType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//XsdNMTOKENType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//XsdNMTOKENType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//XsdNMTOKENType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//XsdNonNegativeIntegerType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//XsdNonNegativeIntegerType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//XsdNonNegativeIntegerType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//XsdPositiveIntegerType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//XsdPositiveIntegerType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//XsdPositiveIntegerType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//XsdQNameType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//XsdQNameType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//XsdQNameType/id"/>
+    </genClasses>
+    <genClasses ecoreClass="target/model/javaee.ecore#//XsdStringType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//XsdStringType/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/javaee.ecore#//XsdStringType/id"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Namespace" basePackage="test" resource="XML" disposableProviderFactory="true"
+      ecorePackage="target/model/namespace.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="target/model/namespace.ecore#//LangTypeMember1">
+      <genEnumLiterals ecoreEnumLiteral="target/model/namespace.ecore#//LangTypeMember1/_"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="target/model/namespace.ecore#//SpaceType">
+      <genEnumLiterals ecoreEnumLiteral="target/model/namespace.ecore#//SpaceType/default"/>
+      <genEnumLiterals ecoreEnumLiteral="target/model/namespace.ecore#//SpaceType/preserve"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="target/model/namespace.ecore#//LangType"/>
+    <genDataTypes ecoreDataType="target/model/namespace.ecore#//LangTypeMember1Object"/>
+    <genDataTypes ecoreDataType="target/model/namespace.ecore#//SpaceTypeObject"/>
+    <genClasses ecoreClass="target/model/namespace.ecore#//DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute target/model/namespace.ecore#//DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/namespace.ecore#//DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference target/model/namespace.ecore#//DocumentRoot/xSISchemaLocation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/namespace.ecore#//DocumentRoot/base"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/namespace.ecore#//DocumentRoot/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/namespace.ecore#//DocumentRoot/lang"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute target/model/namespace.ecore#//DocumentRoot/space"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

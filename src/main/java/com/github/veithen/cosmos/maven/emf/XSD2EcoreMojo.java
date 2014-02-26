@@ -1,0 +1,92 @@
+package com.github.veithen.cosmos.maven.emf;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.maven.plugin.AbstractMojo;
+import org.apache.maven.plugin.MojoExecutionException;
+import org.apache.maven.plugin.MojoFailureException;
+import org.apache.maven.plugins.annotations.Mojo;
+import org.apache.maven.plugins.annotations.Parameter;
+import org.apache.xml.resolver.Catalog;
+import org.apache.xml.resolver.CatalogManager;
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
+import org.eclipse.xsd.ecore.XSDEcoreBuilder;
+
+@Mojo(name="xsd2ecore")
+public class XSD2EcoreMojo extends AbstractMojo {
+    @Parameter(required=true)
+    private File input;
+    
+    @Parameter
+    private File catalog;
+    
+    /**
+     * Specifies the output file name for the generated Ecore model. If the conversion generates
+     * multiple packages (because the input XML schema imports other namespaces), then they will all
+     * be put into the same output file. Note that in this case it is not possible to create a
+     * generator model for the resulting Ecore model.
+     */
+    @Parameter
+    private File output;
+    
+    /**
+     * The output directory to write generated Ecore models to. This parameter is only used if
+     * <tt>output</tt> is not set.
+     */
+    @Parameter(defaultValue="${project.build.directory}/model")
+    private File outputDirectory;
+
+    /**
+     * Specifies whether the generated packages should have qualified names. Note that it is not
+     * possible to create a generator model if the Ecore model uses qualified package names.
+     */
+    @Parameter(defaultValue="false")
+    private boolean useQualifiedPackageNames;
+    
+    @Override
+    public void execute() throws MojoExecutionException, MojoFailureException {
+        Catalog catalog;
+        if (this.catalog == null) {
+            catalog = null;
+        } else {
+            CatalogManager catalogManager = new CatalogManager();
+            catalogManager.setCatalogFiles(this.catalog.getAbsolutePath());
+            catalog = catalogManager.getCatalog();
+        }
+        XSDEcoreBuilder xsdEcoreBuilder = new CustomXSDEcoreBuilder(new Resolver(getLog(), catalog));
+        ResourceSet resourceSet = new ResourceSetImpl();
+        Resource commonResource = output == null ? null : createXMIResource(resourceSet, output);
+        for (EObject element : xsdEcoreBuilder.generate(URI.createFileURI(input.getAbsolutePath()))) {
+            EPackage ePackage = (EPackage)element;
+            if (!useQualifiedPackageNames) {
+                String name = ePackage.getName();
+                ePackage.setName(name.substring(name.lastIndexOf('.')+1));
+            }
+            Resource resource = commonResource == null ? createXMIResource(resourceSet, new File(outputDirectory, ePackage.getNsPrefix() + ".ecore")) : commonResource;
+            resource.getContents().add(element);
+        }
+        try {
+            for (Resource resource : resourceSet.getResources()) {
+                resource.save(null);
+            }
+        } catch (IOException ex) {
+            throw new MojoExecutionException(ex.getMessage(), ex);
+        }
+    }
+    
+    private static Resource createXMIResource(ResourceSet resourceSet, File file) {
+        // Don't use ResourceSet#createResource: this gives us control over the resource type being created
+        // (XMI) and we don't need to register a ResourceFactory (which would be problematic because
+        // the user may specify any suffix for the output file).
+        Resource resource = new XMIResourceImpl(URI.createFileURI(file.getAbsolutePath()));
+        resourceSet.getResources().add(resource);
+        return resource;
+    }
+}
