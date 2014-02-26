@@ -11,6 +11,7 @@ import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
+import org.apache.maven.project.MavenProject;
 import org.eclipse.emf.codegen.ecore.generator.Generator;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModelPackage;
@@ -27,8 +28,10 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 
-@Mojo(name="generate", defaultPhase=LifecyclePhase.GENERATE_SOURCES)
-public class GenerateMojo extends AbstractMojo {
+public abstract class GenerateMojo extends AbstractMojo {
+    @Parameter(defaultValue="${project}", required=true, readonly=true)
+    private MavenProject project;
+    
     @Parameter(required=true)
     private File genmodel;
 
@@ -73,10 +76,16 @@ public class GenerateMojo extends AbstractMojo {
 //      gen.getOptions().resourceSet = set;
         gen.getAdapterFactoryDescriptorRegistry().addDescriptor("http://www.eclipse.org/emf/2002/GenModel", GenModelGeneratorAdapterFactory.DESCRIPTOR);
         gen.setInput(genmodel);
+        // Setting the plugin ID to null suppresses generation of plugin.xml and related files
+        genmodel.setModelPluginID(null);
         genmodel.setCanGenerate(true);
         System.out.println(gen.canGenerate(genmodel, GenBaseGeneratorAdapter.MODEL_PROJECT_TYPE));
 //      genModel.setModelDirectory(URI.createFileURI(new File("gen-src").getAbsolutePath()).toString());
-        genmodel.setModelDirectory("out/gen-src");
+        genmodel.setModelDirectory("out");
         gen.generate(genmodel, GenBaseGeneratorAdapter.MODEL_PROJECT_TYPE, monitor);
+        
+        addSourceRoot(project, outputDirectory.toString());
     }
+
+    protected abstract void addSourceRoot(MavenProject project, String path);
 }
