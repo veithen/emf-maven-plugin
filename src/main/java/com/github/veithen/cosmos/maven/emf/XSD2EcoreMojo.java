@@ -30,7 +30,7 @@ public class XSD2EcoreMojo extends AbstractMojo {
     /**
      * Specifies the output file name for the generated Ecore model. If the conversion generates
      * multiple packages (because the input XML schema imports other namespaces), then they will all
-     * be put into the same output file. Note that in this case it is not possible to create a
+     * be put into the same output file. Note that you should avoid this if you want to create a
      * generator model for the resulting Ecore model.
      */
     @Parameter
@@ -44,8 +44,8 @@ public class XSD2EcoreMojo extends AbstractMojo {
     private File outputDirectory;
 
     /**
-     * Specifies whether the generated packages should have qualified names. Note that it is not
-     * possible to create a generator model if the Ecore model uses qualified package names.
+     * Specifies whether the generated packages should have qualified names. Note that you should
+     * avoid qualified package names if you want to create a generator model for the Ecore model.
      */
     @Parameter(defaultValue="false")
     private boolean useQualifiedPackageNames;
