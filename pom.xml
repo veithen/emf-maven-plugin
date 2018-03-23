@@ -24,10 +24,11 @@
     <parent>
         <groupId>com.github.veithen.cosmos</groupId>
         <artifactId>cosmos</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>0.1</version>
     </parent>
 
     <artifactId>emf-maven-plugin</artifactId>
+    <version>0.1-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
 
     <url>https://github.com/veithen/emf-maven-plugin</url>
@@ -199,7 +200,7 @@
             <extension>
                 <groupId>com.github.veithen.cosmos</groupId>
                 <artifactId>p2-maven-connector</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>0.1</version>
             </extension>
         </extensions>
     </build>
