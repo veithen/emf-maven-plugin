@@ -23,21 +23,29 @@
     <groupId>test</groupId>
     <artifactId>test</artifactId>
     <version>1</version>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.github.veithen.cosmos.bom</groupId>
+                <artifactId>kepler</artifactId>
+                <version>@cosmos.version@</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <dependencies>
         <dependency>
             <groupId>osgi.bundle</groupId>
             <artifactId>org.eclipse.emf.common</artifactId>
-            <version>@emf.version@</version>
         </dependency>
         <dependency>
             <groupId>osgi.bundle</groupId>
             <artifactId>org.eclipse.emf.ecore</artifactId>
-            <version>@emf.version@</version>
         </dependency>
         <dependency>
             <groupId>osgi.bundle</groupId>
             <artifactId>org.eclipse.emf.ecore.xmi</artifactId>
-            <version>@emf.version@</version>
         </dependency>
     </dependencies>
     <build>
