@@ -89,6 +89,30 @@
         </dependency>
         <dependency>
             <groupId>osgi.bundle</groupId>
+            <artifactId>org.eclipse.core.contenttype</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>osgi.bundle</groupId>
+            <artifactId>org.eclipse.core.jobs</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>osgi.bundle</groupId>
+            <artifactId>org.eclipse.core.resources</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>osgi.bundle</groupId>
+            <artifactId>org.eclipse.core.runtime</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>osgi.bundle</groupId>
+            <artifactId>org.eclipse.emf.codegen</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>osgi.bundle</groupId>
+            <artifactId>org.eclipse.emf.codegen.ecore</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>osgi.bundle</groupId>
             <artifactId>org.eclipse.emf.common</artifactId>
         </dependency>
         <dependency>
@@ -101,43 +125,7 @@
         </dependency>
         <dependency>
             <groupId>osgi.bundle</groupId>
-            <artifactId>org.eclipse.emf.codegen</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>osgi.bundle</groupId>
-            <artifactId>org.eclipse.emf.codegen.ecore</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>osgi.bundle</groupId>
-            <artifactId>org.eclipse.xsd</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>osgi.bundle</groupId>
-            <artifactId>org.eclipse.jdt.core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>osgi.bundle</groupId>
             <artifactId>org.eclipse.equinox.common</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>osgi.bundle</groupId>
-            <artifactId>org.eclipse.osgi</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>osgi.bundle</groupId>
-            <artifactId>org.eclipse.core.resources</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>osgi.bundle</groupId>
-            <artifactId>org.eclipse.core.runtime</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>osgi.bundle</groupId>
-            <artifactId>org.eclipse.core.jobs</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>osgi.bundle</groupId>
-            <artifactId>org.eclipse.core.contenttype</artifactId>
         </dependency>
         <dependency>
             <groupId>osgi.bundle</groupId>
@@ -145,7 +133,19 @@
         </dependency>
         <dependency>
             <groupId>osgi.bundle</groupId>
+            <artifactId>org.eclipse.jdt.core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>osgi.bundle</groupId>
+            <artifactId>org.eclipse.osgi</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>osgi.bundle</groupId>
             <artifactId>org.eclipse.text</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>osgi.bundle</groupId>
+            <artifactId>org.eclipse.xsd</artifactId>
         </dependency>
     </dependencies>
 
