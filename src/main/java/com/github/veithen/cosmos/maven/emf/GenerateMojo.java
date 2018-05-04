@@ -22,16 +22,20 @@ package com.github.veithen.cosmos.maven.emf;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.Map;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.project.MavenProject;
+import org.eclipse.core.internal.resources.ProjectDescription;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IWorkspaceRoot;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.codegen.ecore.generator.Generator;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
-import org.eclipse.emf.codegen.ecore.genmodel.GenModelPackage;
 import org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter;
 import org.eclipse.emf.codegen.ecore.genmodel.generator.GenModelGeneratorAdapterFactory;
 import org.eclipse.emf.common.util.BasicMonitor;
@@ -43,7 +47,9 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
+import org.osgi.framework.BundleException;
+
+import com.github.veithen.cosmos.osgi.runtime.CosmosRuntime;
 
 public abstract class GenerateMojo extends AbstractMojo {
     @Parameter(defaultValue="${project}", required=true, readonly=true)
@@ -55,19 +61,14 @@ public abstract class GenerateMojo extends AbstractMojo {
     @Parameter(required=true, defaultValue="${project.build.directory}/generated-sources/emf")
     private File outputDirectory;
     
-    static {
-        // Ensure that the GenModel package is registered in the package registry
-        GenModelPackage.eINSTANCE.eClass();
-    }
-    
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
+        try {
+            CosmosRuntime.getInstance();
+        } catch (BundleException ex) {
+            throw new MojoFailureException("Failed to start Cosmos runtime", ex);
+        }
         ResourceSet set = new ResourceSetImpl();
-        EcoreResourceFactoryImpl ecoreFactory = new EcoreResourceFactoryImpl();
-        Resource.Factory.Registry registry = set.getResourceFactoryRegistry();
-        Map<String,Object> map = registry.getExtensionToFactoryMap();
-        map.put("ecore", ecoreFactory);
-        map.put("genmodel", ecoreFactory);
 
         Resource res = set.getResource(URI.createFileURI(genmodel.getAbsolutePath()), true);
         try {
@@ -86,8 +87,19 @@ public abstract class GenerateMojo extends AbstractMojo {
         genmodel.reconcile();
         
         Monitor monitor = new BasicMonitor.Printing(System.out);
+        IProgressMonitor progressMonitor = BasicMonitor.toIProgressMonitor(monitor);
         
-        EcorePlugin.getPlatformResourceMap().put("out", URI.createFileURI(outputDirectory.getAbsolutePath() + "/"));
+        IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+        IProject eclipseProject = root.getProject("out");
+        ProjectDescription projectDescription = new ProjectDescription();
+        projectDescription.setName(eclipseProject.getName());
+        projectDescription.setLocationURI(outputDirectory.toURI());
+        try {
+            eclipseProject.create(projectDescription, progressMonitor);
+            eclipseProject.open(progressMonitor);
+        } catch (CoreException ex) {
+            throw new MojoFailureException("Unable to create Eclipse project", ex);
+        }
         
         Generator gen = new Generator();
 //      gen.getOptions().resourceSet = set;

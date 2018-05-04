@@ -83,6 +83,11 @@
             <version>3.0.5</version>
         </dependency>
         <dependency>
+            <groupId>com.github.veithen.cosmos</groupId>
+            <artifactId>cosmos-equinox</artifactId>
+            <version>${cosmos.version}</version>
+        </dependency>
+        <dependency>
             <groupId>xml-resolver</groupId>
             <artifactId>xml-resolver</artifactId>
             <version>1.2</version>
@@ -90,6 +95,10 @@
         <dependency>
             <groupId>osgi.bundle</groupId>
             <artifactId>org.eclipse.core.contenttype</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>osgi.bundle</groupId>
+            <artifactId>org.eclipse.core.filesystem</artifactId>
         </dependency>
         <dependency>
             <groupId>osgi.bundle</groupId>
@@ -125,6 +134,10 @@
         </dependency>
         <dependency>
             <groupId>osgi.bundle</groupId>
+            <artifactId>org.eclipse.equinox.app</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>osgi.bundle</groupId>
             <artifactId>org.eclipse.equinox.common</artifactId>
         </dependency>
         <dependency>
@@ -133,11 +146,11 @@
         </dependency>
         <dependency>
             <groupId>osgi.bundle</groupId>
-            <artifactId>org.eclipse.jdt.core</artifactId>
+            <artifactId>org.eclipse.equinox.registry</artifactId>
         </dependency>
         <dependency>
             <groupId>osgi.bundle</groupId>
-            <artifactId>org.eclipse.osgi</artifactId>
+            <artifactId>org.eclipse.jdt.core</artifactId>
         </dependency>
         <dependency>
             <groupId>osgi.bundle</groupId>
