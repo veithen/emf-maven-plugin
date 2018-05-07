@@ -41,8 +41,12 @@ import org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter;
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.Monitor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public abstract class GenerateMojo extends EMFMojo {
+    private static final Logger logger = LoggerFactory.getLogger(GenerateMojo.class);
+
     @Parameter(property="project", required=true, readonly=true)
     private MavenProject project;
     
@@ -67,7 +71,7 @@ public abstract class GenerateMojo extends EMFMojo {
     private void generate(GenModel genmodel) throws MojoExecutionException, MojoFailureException {
         genmodel.reconcile();
         
-        Monitor monitor = new BasicMonitor.Printing(System.out);
+        Monitor monitor = new DebugMonitor(logger);
         IProgressMonitor progressMonitor = BasicMonitor.toIProgressMonitor(monitor);
         
         String eclipseProjectName = "out"; //project.getGroupId() + "-" + project.getArtifactId() + "-" + mojoExecution.getGoal() + "-" + mojoExecution.getExecutionId();
