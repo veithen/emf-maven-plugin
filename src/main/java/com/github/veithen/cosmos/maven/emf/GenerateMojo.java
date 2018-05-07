@@ -37,7 +37,6 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.codegen.ecore.generator.Generator;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
 import org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter;
-import org.eclipse.emf.codegen.ecore.genmodel.generator.GenModelGeneratorAdapterFactory;
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.Monitor;
 
@@ -80,7 +79,6 @@ public abstract class GenerateMojo extends EMFMojo {
         
         Generator gen = new Generator();
 //      gen.getOptions().resourceSet = set;
-        gen.getAdapterFactoryDescriptorRegistry().addDescriptor("http://www.eclipse.org/emf/2002/GenModel", GenModelGeneratorAdapterFactory.DESCRIPTOR);
         gen.setInput(genmodel);
         // Setting the plugin ID to null suppresses generation of plugin.xml and related files
         genmodel.setModelPluginID(null);
