@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.util.Arrays;
 
 import org.apache.maven.model.Resource;
+import org.apache.maven.plugin.MojoExecution;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.plugins.annotations.Parameter;
@@ -38,11 +39,15 @@ import org.eclipse.emf.codegen.ecore.generator.Generator;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
 import org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter;
 import org.eclipse.emf.common.util.BasicMonitor;
+import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.Monitor;
 
 public abstract class GenerateMojo extends EMFMojo {
     @Parameter(property="project", required=true, readonly=true)
     private MavenProject project;
+    
+    @Parameter(property="mojoExecution", required=true, readonly=true)
+    private MojoExecution mojoExecution;
     
     @Parameter(required=true)
     private File genmodel;
@@ -65,34 +70,64 @@ public abstract class GenerateMojo extends EMFMojo {
         Monitor monitor = new BasicMonitor.Printing(System.out);
         IProgressMonitor progressMonitor = BasicMonitor.toIProgressMonitor(monitor);
         
+        String eclipseProjectName = "out"; //project.getGroupId() + "-" + project.getArtifactId() + "-" + mojoExecution.getGoal() + "-" + mojoExecution.getExecutionId();
         IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-        IProject eclipseProject = root.getProject("out");
+        IProject eclipseProject = root.getProject(eclipseProjectName);
         ProjectDescription projectDescription = new ProjectDescription();
-        projectDescription.setName(eclipseProject.getName());
+        projectDescription.setName(eclipseProjectName);
         projectDescription.setLocationURI(outputDirectory.toURI());
         try {
             eclipseProject.create(projectDescription, progressMonitor);
-            eclipseProject.open(progressMonitor);
         } catch (CoreException ex) {
             throw new MojoFailureException("Unable to create Eclipse project", ex);
         }
-        
-        Generator gen = new Generator();
-        gen.setInput(genmodel);
-        // Setting the plugin ID to null suppresses generation of plugin.xml and related files
-        genmodel.setModelPluginID(null);
-        genmodel.setCanGenerate(true);
-        if (!gen.canGenerate(genmodel, GenBaseGeneratorAdapter.MODEL_PROJECT_TYPE)) {
-            throw new MojoExecutionException("canGenerate returned false");
+        try {
+            try {
+                eclipseProject.open(progressMonitor);
+            } catch (CoreException ex) {
+                throw new MojoFailureException("Unable to open Eclipse project", ex);
+            }
+            
+            Generator gen = new Generator();
+            gen.setInput(genmodel);
+            // Setting the plugin ID to null suppresses generation of plugin.xml and related files
+            genmodel.setModelPluginID(null);
+            genmodel.setCanGenerate(true);
+            if (!gen.canGenerate(genmodel, GenBaseGeneratorAdapter.MODEL_PROJECT_TYPE)) {
+                throw new MojoExecutionException("canGenerate returned false");
+            }
+            genmodel.setModelDirectory(eclipseProjectName);
+            Diagnostic diagnostic = gen.generate(genmodel, GenBaseGeneratorAdapter.MODEL_PROJECT_TYPE, monitor);
+            if (diagnostic.getSeverity() != Diagnostic.OK) {
+                System.out.println("Diagnostic:");
+                printDiagnostic(0, diagnostic);
+                throw new MojoExecutionException("Code generation failed; see diagnostic for details");
+            }
+        } finally {
+            try {
+                eclipseProject.delete(false, true, progressMonitor);
+            } catch (CoreException ex) {
+                throw new MojoFailureException("Unable to delete Eclipse project", ex);
+            }
         }
-        genmodel.setModelDirectory("out");
-        gen.generate(genmodel, GenBaseGeneratorAdapter.MODEL_PROJECT_TYPE, monitor);
         
         addSourceRoot(project, outputDirectory.toString());
         Resource resource = new Resource();
         resource.setDirectory(outputDirectory.toString());
         resource.setExcludes(Arrays.asList(".project", "**/*.java"));
         addResource(project, resource);
+    }
+
+    private static void printDiagnostic(int level, Diagnostic diagnostic) {
+        for (int i=0; i<level; i++) {
+            System.out.print("  ");
+        }
+        System.out.println(diagnostic.getMessage());
+        for (Diagnostic child : diagnostic.getChildren()) {
+            if (child.getSeverity() != Diagnostic.OK) {
+                printDiagnostic(level+1, child);
+            }
+        }
     }
 
     protected abstract void addSourceRoot(MavenProject project, String path);
