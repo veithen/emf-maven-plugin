@@ -78,13 +78,13 @@ public abstract class GenerateMojo extends EMFMojo {
         }
         
         Generator gen = new Generator();
-//      gen.getOptions().resourceSet = set;
         gen.setInput(genmodel);
         // Setting the plugin ID to null suppresses generation of plugin.xml and related files
         genmodel.setModelPluginID(null);
         genmodel.setCanGenerate(true);
-        System.out.println(gen.canGenerate(genmodel, GenBaseGeneratorAdapter.MODEL_PROJECT_TYPE));
-//      genModel.setModelDirectory(URI.createFileURI(new File("gen-src").getAbsolutePath()).toString());
+        if (!gen.canGenerate(genmodel, GenBaseGeneratorAdapter.MODEL_PROJECT_TYPE)) {
+            throw new MojoExecutionException("canGenerate returned false");
+        }
         genmodel.setModelDirectory("out");
         gen.generate(genmodel, GenBaseGeneratorAdapter.MODEL_PROJECT_TYPE, monitor);
         
