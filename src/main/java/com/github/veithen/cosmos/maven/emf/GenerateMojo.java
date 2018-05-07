@@ -74,7 +74,7 @@ public abstract class GenerateMojo extends EMFMojo {
         Monitor monitor = new DebugMonitor(logger);
         IProgressMonitor progressMonitor = BasicMonitor.toIProgressMonitor(monitor);
         
-        String eclipseProjectName = "out"; //project.getGroupId() + "-" + project.getArtifactId() + "-" + mojoExecution.getGoal() + "-" + mojoExecution.getExecutionId();
+        String eclipseProjectName = project.getGroupId() + "-" + project.getArtifactId() + "-" + mojoExecution.getGoal() + "-" + mojoExecution.getExecutionId();
         IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
         IProject eclipseProject = root.getProject(eclipseProjectName);
         ProjectDescription projectDescription = new ProjectDescription();
