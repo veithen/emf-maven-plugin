@@ -41,7 +41,7 @@ import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.Monitor;
 
 public abstract class GenerateMojo extends EMFMojo {
-    @Parameter(defaultValue="${project}", required=true, readonly=true)
+    @Parameter(property="project", required=true, readonly=true)
     private MavenProject project;
     
     @Parameter(required=true)
