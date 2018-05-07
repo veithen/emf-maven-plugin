@@ -22,8 +22,8 @@ package com.github.veithen.cosmos.maven.emf;
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.HashMap;
 
+import org.apache.maven.model.Resource;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.plugins.annotations.Parameter;
@@ -40,12 +40,6 @@ import org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter;
 import org.eclipse.emf.codegen.ecore.genmodel.generator.GenModelGeneratorAdapterFactory;
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.Monitor;
-import org.eclipse.emf.common.util.TreeIterator;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 public abstract class GenerateMojo extends EMFMojo {
     @Parameter(defaultValue="${project}", required=true, readonly=true)
@@ -59,22 +53,14 @@ public abstract class GenerateMojo extends EMFMojo {
     
     @Override
     protected void doExecute() throws MojoExecutionException, MojoFailureException {
-        ResourceSet set = new ResourceSetImpl();
-
-        Resource res = set.getResource(URI.createFileURI(genmodel.getAbsolutePath()), true);
         try {
-            res.load(new HashMap());
+            generate(EMFUtil.loadGenModel(genmodel));
         } catch (IOException ex) {
             throw new MojoFailureException(ex.getMessage(), ex);
         }
-        GenModel genmodel = null;
-        for (TreeIterator<EObject> it = res.getAllContents(); it.hasNext(); ) {
-            EObject obj = it.next();
-            if (obj instanceof GenModel) {
-                genmodel = (GenModel)obj;
-                break;
-            }
-        }
+    }
+    
+    private void generate(GenModel genmodel) throws MojoExecutionException, MojoFailureException {
         genmodel.reconcile();
         
         Monitor monitor = new BasicMonitor.Printing(System.out);
@@ -105,12 +91,12 @@ public abstract class GenerateMojo extends EMFMojo {
         gen.generate(genmodel, GenBaseGeneratorAdapter.MODEL_PROJECT_TYPE, monitor);
         
         addSourceRoot(project, outputDirectory.toString());
-        org.apache.maven.model.Resource resource = new org.apache.maven.model.Resource();
+        Resource resource = new Resource();
         resource.setDirectory(outputDirectory.toString());
         resource.setExcludes(Arrays.asList(".project", "**/*.java"));
         addResource(project, resource);
     }
 
     protected abstract void addSourceRoot(MavenProject project, String path);
-    protected abstract void addResource(MavenProject project, org.apache.maven.model.Resource resource);
+    protected abstract void addResource(MavenProject project, Resource resource);
 }
