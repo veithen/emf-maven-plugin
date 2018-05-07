@@ -17,22 +17,12 @@
  * limitations under the License.
  * #L%
  */
-package com.github.veithen.cosmos.maven.emf;
+package test.javaee;
 
-import org.apache.maven.model.Resource;
-import org.apache.maven.plugins.annotations.LifecyclePhase;
-import org.apache.maven.plugins.annotations.Mojo;
-import org.apache.maven.project.MavenProject;
+import junit.framework.TestCase;
 
-@Mojo(name="generate-sources", defaultPhase=LifecyclePhase.GENERATE_SOURCES)
-public class GenerateSourcesMojo extends GenerateMojo {
-    @Override
-    protected void addSourceRoot(MavenProject project, String path) {
-        project.addCompileSourceRoot(path);
-    }
-
-    @Override
-    protected void addResource(MavenProject project, Resource resource) {
-        project.addResource(resource);
+public class ModelTest extends TestCase {
+    public void test() {
+        JavaeePackage.eINSTANCE.getJavaeeFactory().createWebAppType();
     }
 }

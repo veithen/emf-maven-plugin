@@ -21,9 +21,9 @@ package com.github.veithen.cosmos.maven.emf;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 
-import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.plugins.annotations.Parameter;
@@ -46,11 +46,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.osgi.framework.BundleException;
 
-import com.github.veithen.cosmos.osgi.runtime.CosmosRuntime;
-
-public abstract class GenerateMojo extends AbstractMojo {
+public abstract class GenerateMojo extends EMFMojo {
     @Parameter(defaultValue="${project}", required=true, readonly=true)
     private MavenProject project;
     
@@ -61,12 +58,7 @@ public abstract class GenerateMojo extends AbstractMojo {
     private File outputDirectory;
     
     @Override
-    public void execute() throws MojoExecutionException, MojoFailureException {
-        try {
-            CosmosRuntime.getInstance();
-        } catch (BundleException ex) {
-            throw new MojoFailureException("Failed to start Cosmos runtime", ex);
-        }
+    protected void doExecute() throws MojoExecutionException, MojoFailureException {
         ResourceSet set = new ResourceSetImpl();
 
         Resource res = set.getResource(URI.createFileURI(genmodel.getAbsolutePath()), true);
@@ -113,7 +105,12 @@ public abstract class GenerateMojo extends AbstractMojo {
         gen.generate(genmodel, GenBaseGeneratorAdapter.MODEL_PROJECT_TYPE, monitor);
         
         addSourceRoot(project, outputDirectory.toString());
+        org.apache.maven.model.Resource resource = new org.apache.maven.model.Resource();
+        resource.setDirectory(outputDirectory.toString());
+        resource.setExcludes(Arrays.asList(".project", "**/*.java"));
+        addResource(project, resource);
     }
 
     protected abstract void addSourceRoot(MavenProject project, String path);
+    protected abstract void addResource(MavenProject project, org.apache.maven.model.Resource resource);
 }

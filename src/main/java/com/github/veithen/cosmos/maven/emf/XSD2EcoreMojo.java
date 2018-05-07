@@ -22,7 +22,6 @@ package com.github.veithen.cosmos.maven.emf;
 import java.io.File;
 import java.io.IOException;
 
-import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.plugins.annotations.Mojo;
@@ -39,7 +38,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 import org.eclipse.xsd.ecore.XSDEcoreBuilder;
 
 @Mojo(name="xsd2ecore")
-public class XSD2EcoreMojo extends AbstractMojo {
+public class XSD2EcoreMojo extends EMFMojo {
     @Parameter(required=true)
     private File input;
     
@@ -70,7 +69,7 @@ public class XSD2EcoreMojo extends AbstractMojo {
     private boolean useQualifiedPackageNames;
     
     @Override
-    public void execute() throws MojoExecutionException, MojoFailureException {
+    protected void doExecute() throws MojoExecutionException, MojoFailureException {
         Catalog catalog;
         if (this.catalog == null) {
             catalog = null;

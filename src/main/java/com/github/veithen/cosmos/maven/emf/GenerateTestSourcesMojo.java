@@ -19,6 +19,7 @@
  */
 package com.github.veithen.cosmos.maven.emf;
 
+import org.apache.maven.model.Resource;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.project.MavenProject;
@@ -28,5 +29,10 @@ public class GenerateTestSourcesMojo extends GenerateMojo {
     @Override
     protected void addSourceRoot(MavenProject project, String path) {
         project.addTestCompileSourceRoot(path);
+    }
+
+    @Override
+    protected void addResource(MavenProject project, Resource resource) {
+        project.addTestResource(resource);
     }
 }

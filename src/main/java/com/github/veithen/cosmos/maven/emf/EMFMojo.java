@@ -19,20 +19,23 @@
  */
 package com.github.veithen.cosmos.maven.emf;
 
-import org.apache.maven.model.Resource;
-import org.apache.maven.plugins.annotations.LifecyclePhase;
-import org.apache.maven.plugins.annotations.Mojo;
-import org.apache.maven.project.MavenProject;
+import org.apache.maven.plugin.AbstractMojo;
+import org.apache.maven.plugin.MojoExecutionException;
+import org.apache.maven.plugin.MojoFailureException;
+import org.osgi.framework.BundleException;
 
-@Mojo(name="generate-sources", defaultPhase=LifecyclePhase.GENERATE_SOURCES)
-public class GenerateSourcesMojo extends GenerateMojo {
+import com.github.veithen.cosmos.osgi.runtime.CosmosRuntime;
+
+public abstract class EMFMojo extends AbstractMojo {
     @Override
-    protected void addSourceRoot(MavenProject project, String path) {
-        project.addCompileSourceRoot(path);
+    public final void execute() throws MojoExecutionException, MojoFailureException {
+        try {
+            CosmosRuntime.getInstance();
+        } catch (BundleException ex) {
+            throw new MojoFailureException("Failed to start Cosmos runtime", ex);
+        }
+        doExecute();
     }
 
-    @Override
-    protected void addResource(MavenProject project, Resource resource) {
-        project.addResource(resource);
-    }
+    protected abstract void doExecute() throws MojoExecutionException, MojoFailureException;
 }
