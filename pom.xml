@@ -18,7 +18,7 @@
   limitations under the License.
   #L%
   -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
@@ -44,25 +44,6 @@
         <github.repository>emf-maven-plugin</github.repository>
         <cosmos.version>0.4.0-SNAPSHOT</cosmos.version>
     </properties>
-
-    <repositories>
-        <repository>
-            <id>p2-kepler</id>
-            <layout>p2</layout>
-            <name>Kepler release repository</name>
-            <url>http://download.eclipse.org/releases/kepler</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>sonatype-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-        </repository>
-    </repositories>
 
     <dependencyManagement>
         <dependencies>
@@ -172,10 +153,29 @@
         </dependency>
     </dependencies>
 
+    <repositories>
+        <repository>
+            <id>p2-kepler</id>
+            <layout>p2</layout>
+            <name>Kepler release repository</name>
+            <url>http://download.eclipse.org/releases/kepler</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>sonatype-snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+    </repositories>
+
     <build>
         <plugins>
             <plugin>
-                <groupId>com.github.veithen.invoker</groupId>
+                <groupId>com.github.veithen.maven</groupId>
                 <artifactId>resolver-proxy-maven-plugin</artifactId>
                 <executions>
                     <execution>
