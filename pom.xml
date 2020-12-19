@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   #%L
-  Cosmos
+  emf-maven-plugin
   %%
-  Copyright (C) 2012 - 2018 Andreas Veithen
+  Copyright (C) 2014 - 2020 Andreas Veithen
   %%
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -22,16 +22,25 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.github.veithen.cosmos</groupId>
-        <artifactId>cosmos</artifactId>
-        <version>0.4.0-SNAPSHOT</version>
+        <groupId>com.github.veithen</groupId>
+        <artifactId>parent</artifactId>
+        <version>24</version>
     </parent>
 
+    <groupId>com.github.veithen.maven</groupId>
     <artifactId>emf-maven-plugin</artifactId>
     <version>0.1.0-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
 
     <url>https://github.com/veithen/emf-maven-plugin</url>
+    <inceptionYear>2014</inceptionYear>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
     <scm>
         <url>https://github.com/veithen/emf-maven-plugin/tree/master</url>
@@ -203,6 +212,8 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>license-maven-plugin</artifactId>
                 <configuration>
+                    <projectName>emf-maven-plugin</projectName>
+                    <licenseName>apache_v2</licenseName>
                     <excludes>
                         <exclude>src/it/webapp/*.xsd</exclude>
                     </excludes>
