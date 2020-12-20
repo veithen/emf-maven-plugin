@@ -26,9 +26,9 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.github.veithen.cosmos.bom</groupId>
-                <artifactId>kepler</artifactId>
-                <version>@cosmos.version@</version>
+                <groupId>@project.groupId@</groupId>
+                <artifactId>@project.artifactId@</artifactId>
+                <version>@project.version@</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -36,15 +36,11 @@
     </dependencyManagement>
     <dependencies>
         <dependency>
-            <groupId>osgi.bundle</groupId>
-            <artifactId>org.eclipse.emf.common</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>osgi.bundle</groupId>
+            <groupId>org.eclipse.emf</groupId>
             <artifactId>org.eclipse.emf.ecore</artifactId>
         </dependency>
         <dependency>
-            <groupId>osgi.bundle</groupId>
+            <groupId>org.eclipse.emf</groupId>
             <artifactId>org.eclipse.emf.ecore.xmi</artifactId>
         </dependency>
         <dependency>
