@@ -17,22 +17,22 @@
  * limitations under the License.
  * #L%
  */
-package com.github.veithen.cosmos.maven.emf;
+package com.github.veithen.maven.emf;
 
-import org.apache.maven.model.Resource;
-import org.apache.maven.plugins.annotations.LifecyclePhase;
-import org.apache.maven.plugins.annotations.Mojo;
-import org.apache.maven.project.MavenProject;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.xsd.ecore.XSDEcoreBuilder;
 
-@Mojo(name="generate-test-sources", defaultPhase=LifecyclePhase.GENERATE_TEST_SOURCES)
-public class GenerateTestSourcesMojo extends GenerateMojo {
-    @Override
-    protected void addSourceRoot(MavenProject project, String path) {
-        project.addTestCompileSourceRoot(path);
+final class CustomXSDEcoreBuilder extends XSDEcoreBuilder {
+    private final Resolver resolver;
+    
+    public CustomXSDEcoreBuilder(Resolver resolver) {
+        this.resolver = resolver;
     }
 
     @Override
-    protected void addResource(MavenProject project, Resource resource) {
-        project.addTestResource(resource);
+    protected ResourceSet createResourceSet() {
+        ResourceSet resourceSet = super.createResourceSet();
+        resourceSet.getAdapterFactories().add(new ResolverAdapterFactory(resolver));
+        return resourceSet;
     }
 }

@@ -17,7 +17,7 @@
  * limitations under the License.
  * #L%
  */
-package com.github.veithen.cosmos.maven.emf;
+package com.github.veithen.maven.emf;
 
 import java.io.File;
 import java.io.IOException;
