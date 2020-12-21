@@ -267,6 +267,7 @@
                     <extraExtensions>
                         <ecore>xml</ecore>
                         <genmodel>xml</genmodel>
+                        <list>properties</list>
                         <xsd>xml</xsd>
                     </extraExtensions>
                 </configuration>
