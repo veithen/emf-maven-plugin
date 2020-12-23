@@ -7,9 +7,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -47,18 +47,18 @@ import org.slf4j.LoggerFactory;
 public abstract class GenerateMojo extends EMFMojo {
     private static final Logger logger = LoggerFactory.getLogger(GenerateMojo.class);
 
-    @Parameter(property="project", required=true, readonly=true)
+    @Parameter(property = "project", required = true, readonly = true)
     private MavenProject project;
-    
-    @Parameter(property="mojoExecution", required=true, readonly=true)
+
+    @Parameter(property = "mojoExecution", required = true, readonly = true)
     private MojoExecution mojoExecution;
-    
-    @Parameter(required=true)
+
+    @Parameter(required = true)
     private File genmodel;
 
-    @Parameter(required=true, defaultValue="${project.build.directory}/generated-sources/emf")
+    @Parameter(required = true, defaultValue = "${project.build.directory}/generated-sources/emf")
     private File outputDirectory;
-    
+
     @Override
     protected void doExecute() throws MojoExecutionException, MojoFailureException {
         try {
@@ -67,14 +67,21 @@ public abstract class GenerateMojo extends EMFMojo {
             throw new MojoFailureException(ex.getMessage(), ex);
         }
     }
-    
+
     private void generate(GenModel genmodel) throws MojoExecutionException, MojoFailureException {
         genmodel.reconcile();
-        
+
         Monitor monitor = new DebugMonitor(logger);
         IProgressMonitor progressMonitor = BasicMonitor.toIProgressMonitor(monitor);
-        
-        String eclipseProjectName = project.getGroupId() + "-" + project.getArtifactId() + "-" + mojoExecution.getGoal() + "-" + mojoExecution.getExecutionId();
+
+        String eclipseProjectName =
+                project.getGroupId()
+                        + "-"
+                        + project.getArtifactId()
+                        + "-"
+                        + mojoExecution.getGoal()
+                        + "-"
+                        + mojoExecution.getExecutionId();
         IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
         IProject eclipseProject = root.getProject(eclipseProjectName);
         ProjectDescription projectDescription = new ProjectDescription();
@@ -91,7 +98,7 @@ public abstract class GenerateMojo extends EMFMojo {
             } catch (CoreException ex) {
                 throw new MojoFailureException("Unable to open Eclipse project", ex);
             }
-            
+
             Generator gen = new Generator();
             gen.setInput(genmodel);
             // Setting the plugin ID to null suppresses generation of plugin.xml and related files
@@ -101,11 +108,13 @@ public abstract class GenerateMojo extends EMFMojo {
                 throw new MojoExecutionException("canGenerate returned false");
             }
             genmodel.setModelDirectory(eclipseProjectName);
-            Diagnostic diagnostic = gen.generate(genmodel, GenBaseGeneratorAdapter.MODEL_PROJECT_TYPE, monitor);
+            Diagnostic diagnostic =
+                    gen.generate(genmodel, GenBaseGeneratorAdapter.MODEL_PROJECT_TYPE, monitor);
             if (diagnostic.getSeverity() != Diagnostic.OK) {
                 System.out.println("Diagnostic:");
                 printDiagnostic(0, diagnostic);
-                throw new MojoExecutionException("Code generation failed; see diagnostic for details");
+                throw new MojoExecutionException(
+                        "Code generation failed; see diagnostic for details");
             }
         } finally {
             try {
@@ -114,7 +123,7 @@ public abstract class GenerateMojo extends EMFMojo {
                 throw new MojoFailureException("Unable to delete Eclipse project", ex);
             }
         }
-        
+
         addSourceRoot(project, outputDirectory.toString());
         Resource resource = new Resource();
         resource.setDirectory(outputDirectory.toString());
@@ -123,17 +132,18 @@ public abstract class GenerateMojo extends EMFMojo {
     }
 
     private static void printDiagnostic(int level, Diagnostic diagnostic) {
-        for (int i=0; i<level; i++) {
+        for (int i = 0; i < level; i++) {
             System.out.print("  ");
         }
         System.out.println(diagnostic.getMessage());
         for (Diagnostic child : diagnostic.getChildren()) {
             if (child.getSeverity() != Diagnostic.OK) {
-                printDiagnostic(level+1, child);
+                printDiagnostic(level + 1, child);
             }
         }
     }
 
     protected abstract void addSourceRoot(MavenProject project, String path);
+
     protected abstract void addResource(MavenProject project, Resource resource);
 }
