@@ -19,9 +19,10 @@
  */
 package test;
 
-import junit.framework.TestCase;
+import org.junit.jupiter.api.Test;
 
-public class ModelTest extends TestCase {
+public class ModelTest {
+    @Test
     public void test() {
         TestPackage.eINSTANCE.getTestFactory().createTest();
     }

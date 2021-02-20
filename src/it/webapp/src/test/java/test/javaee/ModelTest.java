@@ -19,9 +19,10 @@
  */
 package test.javaee;
 
-import junit.framework.TestCase;
+import org.junit.jupiter.api.Test;
 
-public class ModelTest extends TestCase {
+public class ModelTest {
+    @Test
     public void test() {
         JavaeePackage.eINSTANCE.getJavaeeFactory().createWebAppType();
     }
