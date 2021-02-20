@@ -9,3 +9,11 @@ updates:
         versions: ">= 3.17.0"
       - dependency-name: "org.eclipse.jdt:org.eclipse.jdt.launching"
         versions: ">= 3.18.0"
+  - package-ecosystem: "maven"
+    directory: "/src/it/test"
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "maven"
+    directory: "/src/it/webapp"
+    schedule:
+      interval: "daily"
