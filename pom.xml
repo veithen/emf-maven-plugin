@@ -94,7 +94,7 @@
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
                 <artifactId>org.eclipse.core.filesystem</artifactId>
-                <version>1.7.700</version>
+                <version>1.9.0</version>
                 <exclusions>
                     <exclusion>
                         <groupId>org.eclipse.platform</groupId>
