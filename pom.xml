@@ -51,7 +51,7 @@
 
     <properties>
         <github.repository>emf-maven-plugin</github.repository>
-        <maven.version>3.8.1</maven.version>
+        <maven.version>3.8.2</maven.version>
     </properties>
 
     <dependencyManagement>
