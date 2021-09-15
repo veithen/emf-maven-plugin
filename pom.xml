@@ -29,7 +29,7 @@
 
     <groupId>com.github.veithen.maven</groupId>
     <artifactId>emf-maven-plugin</artifactId>
-    <version>0.1.2-SNAPSHOT</version>
+    <version>0.2.0-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
 
     <url>https://github.com/veithen/emf-maven-plugin</url>
@@ -51,6 +51,7 @@
 
     <properties>
         <github.repository>emf-maven-plugin</github.repository>
+        <javaVersion>11</javaVersion>
         <maven.version>3.8.2</maven.version>
     </properties>
 
