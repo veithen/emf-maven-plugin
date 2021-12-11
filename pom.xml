@@ -85,12 +85,12 @@
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
                 <artifactId>org.eclipse.core.contenttype</artifactId>
-                <version>3.8.0</version>
+                <version>3.8.100</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
                 <artifactId>org.eclipse.core.expressions</artifactId>
-                <version>3.8.0</version>
+                <version>3.8.100</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
@@ -132,7 +132,7 @@
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
                 <artifactId>org.eclipse.debug.core</artifactId>
-                <version>3.18.200</version>
+                <version>3.18.300</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
