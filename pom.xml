@@ -117,7 +117,7 @@
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
                 <artifactId>org.eclipse.core.runtime</artifactId>
-                <version>3.24.0</version>
+                <version>3.24.100</version>
                 <exclusions>
                     <exclusion>
                         <groupId>org.eclipse.platform</groupId>
