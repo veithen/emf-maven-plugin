@@ -60,13 +60,18 @@
         <dependencies>
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
+                <artifactId>org.eclipse.osgi</artifactId>
+                <version>3.17.200</version>
+            </dependency>
+            <dependency>
+                <groupId>org.eclipse.platform</groupId>
                 <artifactId>org.eclipse.equinox.app</artifactId>
                 <version>1.6.100</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
                 <artifactId>org.eclipse.equinox.common</artifactId>
-                <version>3.15.100</version>
+                <version>3.16.0</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
@@ -97,12 +102,6 @@
                 <groupId>org.eclipse.platform</groupId>
                 <artifactId>org.eclipse.core.filesystem</artifactId>
                 <version>1.9.300</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.eclipse.platform</groupId>
-                        <artifactId>org.eclipse.osgi</artifactId>
-                    </exclusion>
-                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
@@ -118,12 +117,6 @@
                 <groupId>org.eclipse.platform</groupId>
                 <artifactId>org.eclipse.core.runtime</artifactId>
                 <version>3.24.100</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.eclipse.platform</groupId>
-                        <artifactId>org.eclipse.osgi</artifactId>
-                    </exclusion>
-                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
@@ -150,10 +143,6 @@
                 <artifactId>org.eclipse.jdt.launching</artifactId>
                 <version>3.19.500</version>
                 <exclusions>
-                    <exclusion>
-                        <groupId>org.eclipse.platform</groupId>
-                        <artifactId>org.eclipse.osgi</artifactId>
-                    </exclusion>
                     <exclusion>
                         <groupId>org.eclipse.jdt</groupId>
                         <artifactId>org.eclipse.jdt.debug</artifactId>
