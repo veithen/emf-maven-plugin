@@ -117,7 +117,7 @@
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
                 <artifactId>org.eclipse.core.runtime</artifactId>
-                <version>3.24.0</version>
+                <version>3.24.100</version>
                 <exclusions>
                     <exclusion>
                         <groupId>org.eclipse.platform</groupId>
@@ -133,7 +133,7 @@
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
                 <artifactId>org.eclipse.debug.core</artifactId>
-                <version>3.18.300</version>
+                <version>3.19.0</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
@@ -148,7 +148,7 @@
             <dependency>
                 <groupId>org.eclipse.jdt</groupId>
                 <artifactId>org.eclipse.jdt.launching</artifactId>
-                <version>3.19.400</version>
+                <version>3.19.500</version>
                 <exclusions>
                     <exclusion>
                         <groupId>org.eclipse.platform</groupId>
