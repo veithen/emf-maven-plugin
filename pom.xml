@@ -141,7 +141,7 @@
             <dependency>
                 <groupId>org.eclipse.jdt</groupId>
                 <artifactId>org.eclipse.jdt.launching</artifactId>
-                <version>3.19.500</version>
+                <version>3.19.600</version>
                 <exclusions>
                     <exclusion>
                         <groupId>org.eclipse.jdt</groupId>
