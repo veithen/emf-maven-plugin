@@ -76,7 +76,7 @@
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
                 <artifactId>org.eclipse.equinox.preferences</artifactId>
-                <version>3.9.100</version>
+                <version>3.10.1</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
@@ -168,6 +168,11 @@
                 <groupId>org.eclipse.emf</groupId>
                 <artifactId>org.eclipse.emf.ecore.xmi</artifactId>
                 <version>2.16.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.osgi</groupId>
+                <artifactId>org.osgi.service.prefs</artifactId>
+                <version>1.1.2</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
