@@ -74,7 +74,7 @@
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
                 <artifactId>org.eclipse.equinox.preferences</artifactId>
-                <version>3.10.1</version>
+                <version>3.10.100</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
@@ -124,7 +124,7 @@
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
                 <artifactId>org.eclipse.debug.core</artifactId>
-                <version>3.19.100</version>
+                <version>3.20.0</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
