@@ -109,7 +109,7 @@
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
                 <artifactId>org.eclipse.core.resources</artifactId>
-                <version>3.17.0</version>
+                <version>3.18.0</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
@@ -139,7 +139,7 @@
             <dependency>
                 <groupId>org.eclipse.jdt</groupId>
                 <artifactId>org.eclipse.jdt.launching</artifactId>
-                <version>3.19.600</version>
+                <version>3.19.700</version>
                 <exclusions>
                     <exclusion>
                         <groupId>org.eclipse.jdt</groupId>
