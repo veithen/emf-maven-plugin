@@ -59,12 +59,12 @@
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
                 <artifactId>org.eclipse.osgi</artifactId>
-                <version>3.18.0</version>
+                <version>3.18.100</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
                 <artifactId>org.eclipse.equinox.app</artifactId>
-                <version>1.6.100</version>
+                <version>1.6.200</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
@@ -94,7 +94,7 @@
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
                 <artifactId>org.eclipse.core.expressions</artifactId>
-                <version>3.8.100</version>
+                <version>3.8.200</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
@@ -129,7 +129,7 @@
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
                 <artifactId>org.eclipse.text</artifactId>
-                <version>3.12.100</version>
+                <version>3.12.200</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.jdt</groupId>
