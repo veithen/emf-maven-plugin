@@ -89,7 +89,7 @@
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
                 <artifactId>org.eclipse.core.contenttype</artifactId>
-                <version>3.8.100</version>
+                <version>3.8.200</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
@@ -99,7 +99,7 @@
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
                 <artifactId>org.eclipse.core.filesystem</artifactId>
-                <version>1.9.400</version>
+                <version>1.9.500</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
@@ -134,7 +134,7 @@
             <dependency>
                 <groupId>org.eclipse.jdt</groupId>
                 <artifactId>org.eclipse.jdt.core</artifactId>
-                <version>3.30.0</version>
+                <version>3.31.0</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.jdt</groupId>
