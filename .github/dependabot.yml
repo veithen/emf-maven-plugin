@@ -12,3 +12,7 @@ updates:
     directory: "/src/it/webapp"
     schedule:
       interval: "daily"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
