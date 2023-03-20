@@ -124,7 +124,7 @@
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
                 <artifactId>org.eclipse.debug.core</artifactId>
-                <version>3.20.0</version>
+                <version>3.20.100</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
