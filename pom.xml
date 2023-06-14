@@ -22,7 +22,7 @@
     <parent>
         <groupId>com.github.veithen</groupId>
         <artifactId>parent</artifactId>
-        <version>46-SNAPSHOT</version>
+        <version>47-SNAPSHOT</version>
     </parent>
 
     <groupId>com.github.veithen.maven</groupId>
@@ -49,7 +49,7 @@
 
     <properties>
         <github.repository>emf-maven-plugin</github.repository>
-        <javaVersion>11</javaVersion>
+        <javaVersion>17</javaVersion>
         <project.build.outputTimestamp>2022-01-23T12:50:00Z</project.build.outputTimestamp>
         <maven.version>3.9.2</maven.version>
     </properties>
