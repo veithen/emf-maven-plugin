@@ -119,7 +119,7 @@
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
                 <artifactId>org.eclipse.core.variables</artifactId>
-                <version>3.6.100</version>
+                <version>3.6.200</version>
             </dependency>
             <dependency>
                 <groupId>org.eclipse.platform</groupId>
