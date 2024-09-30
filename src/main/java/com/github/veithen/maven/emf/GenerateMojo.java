@@ -53,10 +53,13 @@ public abstract class GenerateMojo extends EMFMojo {
     @Parameter(property = "mojoExecution", required = true, readonly = true)
     private MojoExecution mojoExecution;
 
-    @Parameter(required = true)
+    @Parameter(property = "emf.genmodel", required = true)
     private File genmodel;
 
-    @Parameter(required = true, defaultValue = "${project.build.directory}/generated-sources/emf")
+    @Parameter(
+            property = "emf.output.directory",
+            required = true,
+            defaultValue = "${project.build.directory}/generated-sources/emf")
     private File outputDirectory;
 
     @Override
