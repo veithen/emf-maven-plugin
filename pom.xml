@@ -257,7 +257,6 @@
                 <artifactId>license-maven-plugin</artifactId>
                 <configuration>
                     <projectName>emf-maven-plugin</projectName>
-                    <licenseName>apache_v2</licenseName>
                     <excludes>
                         <exclude>src/it/webapp/*.xsd</exclude>
                     </excludes>
